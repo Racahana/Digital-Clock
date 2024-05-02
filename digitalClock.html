@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Digital Clock</title>
+        <style>
+            @font-face{
+            font-family:'digital-clock-font';
+            src: url('put_the_location_to_your_font.ttf or .otf');
+            }
+            body{
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50% );
+                background-color: antiquewhite;
+            }
+            p{
+                font-size: 100px;
+                padding: 23px;
+                font-family: "digital-clock-font";
+                border: 10px solid rgba(65,105,225,0.5);
+                background-color: skyblue;
+                color: white;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="para"></p>
+    </body>
+    <script>
+        var p=document.getElementById("para");
+        var clock=setInterval(clocktiming, 1000);
+        function clocktiming() {
+            var d= new Date();
+            var d1=d.toLocaleTimeString();
+            p.innerHTML=d1;
+        }
+    </script>
+</html>
